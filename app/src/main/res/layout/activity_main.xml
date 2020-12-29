@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+            <EditText
+                android:id="@+id/activity_main_creditcard_number_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
+                android:inputType="number"
+                android:maxLength="16"
+                app:layout_constraintBottom_toTopOf="@id/activity_main_creditcard_expire_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activity_main_creditcard_number_label" />
+
+            <EditText
+                android:id="@+id/activity_main_creditcard_security_code_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/activity_main_creditcard_security_code_space"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activity_main_creditcard_security_code" />
+
+            <Space
+                android:id="@+id/activity_main_expire_space"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toEndOf="@id/activity_main_year_label"
+                app:layout_constraintTop_toBottomOf="@+id/activity_main_creditcard_expire_label" />
+
+            <Space
+                android:id="@+id/activity_main_creditcard_security_code_space"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toEndOf="@id/activity_main_creditcard_security_code_edit_text"
+                app:layout_constraintTop_toBottomOf="@id/activity_main_creditcard_security_code" />
+
+            <Spinner
+                android:id="@+id/activity_main_creditcard_month_expire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toStartOf="@id/activity_main_month_label"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activity_main_creditcard_expire_label" />
+
+            <Spinner
+                android:id="@+id/activity_main_creditcard_year_expire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toStartOf="@id/activity_main_year_label"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/activity_main_month_label"
+                app:layout_constraintTop_toBottomOf="@+id/activity_main_creditcard_expire_label" />
+
+            <TextView
+                android:id="@+id/activity_main_creditcard_number_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#EDEDED"
+                android:paddingStart="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="カード番号"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/activity_main_creditcard_expire_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#EDEDED"
+                android:paddingStart="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="有効期限"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activity_main_creditcard_number_edit_text" />
+
+            <TextView
+                android:id="@+id/activity_main_month_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="月"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/activity_main_creditcard_year_expire"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/activity_main_creditcard_month_expire"
+                app:layout_constraintTop_toBottomOf="@+id/activity_main_creditcard_expire_label" />
+
+            <TextView
+                android:id="@+id/activity_main_year_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="年"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/activity_main_expire_space"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/activity_main_creditcard_year_expire"
+                app:layout_constraintTop_toBottomOf="@+id/activity_main_creditcard_expire_label" />
+
+            <TextView
+                android:id="@+id/activity_main_creditcard_security_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="#EDEDED"
+                android:paddingStart="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="セキュリティコード"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activity_main_creditcard_month_expire" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/activity_main_creditcard_registration_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
+                android:background="#58ACFA"
+                android:text="登録する"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activity_main_creditcard_security_code_edit_text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
