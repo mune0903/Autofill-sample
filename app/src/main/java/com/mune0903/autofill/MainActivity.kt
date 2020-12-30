@@ -11,12 +11,13 @@ import com.mune0903.autofill.databinding.ActivityMainBinding
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private val binding: ActivityMainBinding by lazy {
+        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             setupAutofill()
